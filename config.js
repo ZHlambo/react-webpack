@@ -20,18 +20,15 @@ var argv = process.argv.splice(2) //可在命令后面拼接port参数  默认�
 config.server_port = argv.length > 0 ? Number(argv[0]) : config.server_port
 if (config.env == "development") { //根据环境，配置获取文件的指向路径
     config.compiler_public_path = `http://${config.server_host}:${config.server_port}/`
-    config.qiniu_host = "http://ojnvjvt5h.bkt.clouddn.com/"
     config.dev = true
     config.pro = false
     config.devtool = 'source-map'
 } else {
     config.compiler_public_path = "/"
-    config.qiniu_host = "http://cdn.baicaiyun.com/"
     config.dev = false
     config.pro = true
     config.devtool = undefined
 }
-config.compiler_qiniu = config.qiniu_host + "manage/"
 config.globals = {
     'process.env': {
         'NODE_ENV': JSON.stringify(config.env === 'development' ? 'development' : "production") //production外使用webpack压缩会提示warning
@@ -39,8 +36,6 @@ config.globals = {
     'NODE_ENV': config.env,
     '__DEV__': config.dev,
     '__PROD__': config.pro,
-    '__IMG__': config.pro ? `'${config.compiler_qiniu}'` : "''",
-    '__QINIU__': `'${config.qiniu_host}'`,
     '__ROUTER__': config.pro ? "'/manage/'" : "'/'",
 }
 

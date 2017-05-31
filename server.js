@@ -9,6 +9,7 @@ var server = new WebpackDevServer(compiler, {
     publicPath: config.publicPath,//引入打包完成的js等路径到html中
     hot: true,
     inline:true,
+    disableHostCheck:true,
     historyApiFallback: true,//单页面网页无论url怎么样都吐index.html
     stats: {
         chunks: false,

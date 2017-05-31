@@ -46,10 +46,10 @@ var webpackConfig = {
             test: /\.js[x]?$/,
             exclude: /node_modules/,
             loader: 'babel-loader',
-            query: {
-                presets: ['es2015', "react", 'stage-0'],
-                plugins: ['transform-decorators-legacy'] //使可以用@的修饰符号 来把redux connect 到view上面
-            }
+            // query: {//这些在。babelrc中已经添加
+            //     presets: ['es2015', "react", 'stage-0'],
+            //     plugins: ['transform-decorators-legacy'] //使可以用@的修饰符号 来把redux connect 到view上面
+            // }
         }, {
             test: /\.[s]?css$/,
             loaders: ExtractTextPlugin.extract({
