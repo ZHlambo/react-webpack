@@ -1,6 +1,7 @@
 var path = require("path");
 var base_paths = path.join("")
 
+
 var config = {
     server_host: getIPAdress(),
     server_port: 8080,
