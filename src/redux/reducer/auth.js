@@ -1,4 +1,8 @@
 import request from '../request'
+import {host} from  '../api'
+
+const GET_URL = "GET_URL"
+
 
 const initState = {
     name: 'Drod'
@@ -6,16 +10,23 @@ const initState = {
 
 export const getUrl = () => (dispatch, getState) => {
     dispatch({
-        type: 'type',
+        type: GET_URL,
         payload: {
-            promise: request.get('http://lsp.baicaiyun.cn/api/shopitem/client/v1/cats/root')
+            promise: request.get(host)
         }
     })
 }
 
 export default function authReducer(state = initState, action) {
     switch (action.type) {
+      case `${GET_URL}_PENDING`:
+        return {...state,data:action.payload}
+      case `${GET_URL}_FULFILLED`:
+        return {...state,data:action.payload}
+      case `${GET_URL}_REJECT`:
+        return {...state,data:action.payload}
+
         default:
-          return state
+          return {...state}
     }
 }

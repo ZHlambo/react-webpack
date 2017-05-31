@@ -5,7 +5,7 @@ var config = require("./config")
 
 var compiler = webpack(webpackConfig);
 var server = new WebpackDevServer(compiler, {
-    contentBase: config.utils_paths.src(""),//获取资源的路径
+    contentBase: config.utils_paths.src("static"),//获取资源的路径
     publicPath: config.publicPath,//引入打包完成的js等路径到html中
     hot: true,
     inline:true,

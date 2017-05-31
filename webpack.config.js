@@ -19,6 +19,8 @@ var webpackConfig = {
             // projectPath: `http://${config.server_host}:${config.server_port}/`
         }),
         new ExtractTextPlugin(`[name].[hash].css`), //css 分离打包
+        //配合UglifyJsPlugin，否则会提示warning
+        new webpack.DefinePlugin(config.globals),//实现全代码替换字段
     ],
     entry: {
         "main": config.utils_paths.src('main.js'),
@@ -30,9 +32,7 @@ var webpackConfig = {
         publicPath: config.compiler_public_path
     },
     resolve: {
-        alias: {
-            "src": config.utils_paths.src(""),
-        },
+      modules: [config.utils_paths.src(""), "node_modules"],
         extensions: ['.js', '.jsx', '.json']
     },
     devServer: {
