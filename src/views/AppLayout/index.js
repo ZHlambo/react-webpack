@@ -7,6 +7,7 @@ export default class AppLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {}
+    
     this.props.getUrl()
     console.log(__KKK);
   }
