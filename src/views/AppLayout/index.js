@@ -7,7 +7,7 @@ export default class AppLayout extends Component {
   constructor(props) {
     super(props);
     this.state = {}
-    
+
     this.props.getUrl()
     console.log(__KKK);
   }
@@ -15,7 +15,8 @@ export default class AppLayout extends Component {
     console.log(this.props.authReducer,nextProps.authReducer);
   }
   render() {
-    return <div>asdfa
+    return <div>
+      AppLayoutAppLayoutAppLayoutAppLayout
       {this.props.children}
     </div>
   }

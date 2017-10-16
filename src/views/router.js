@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Route, Router, IndexRoute, browserHistory} from 'react-router'
+import {Route, Router, IndexRoute, browserHistory, Switch} from 'react-router'
 import {Provider} from 'react-redux';
 import {createStore, applyMiddleware} from 'redux'
 import promiseMiddleware from 'redux-promise-middleware'//改变promise的type状态
@@ -15,9 +15,14 @@ const store = createStore(reducers, applyMiddleware(thunk,promiseMiddleware({}),
 export default() => {
     return <Provider store={store}>
         <ConnectedRouter history={history}>
-          <AppLayout>
-            <Route path="/Home" component={Home}></Route>
-          </AppLayout>
+          <Switch>
+            <Route path="/index" component={Home}></Route>
+            <Route path="/AppLayout" component={AppLayout}></Route>
+            <Route>
+              {/* 404 no found 页面 */}
+              <div>asdfadsfa</div>
+            </Route>
+          </Switch>
         </ConnectedRouter >
     </Provider>
 }

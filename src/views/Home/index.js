@@ -5,6 +5,6 @@ export default class Home extends Component {
         this.state = {}
     }
     render() {
-        return <div>sfdg65xg</div>
+        return <div>HomeHomeHomeHomeHomeHome</div>
     }
 }
