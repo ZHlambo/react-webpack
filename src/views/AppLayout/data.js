@@ -10,13 +10,7 @@ module.exports = [
         "value": "/index/cat"
       }, {
         "name": "商品管理",
-        "value": "/item",
-        "child": [
-          {
-            "name": "商品编辑",
-            "value": "/index/item"
-          }
-        ]
+        "value": "/index/item"
       }
     ]
   }, {

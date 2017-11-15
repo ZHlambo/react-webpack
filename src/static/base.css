@@ -1,6 +1,23 @@
+* {
+  box-sizing: border-box; // 宽度 = 内边距加上padding
+}
+
+::-webkit-scrollbar {
+  float: right;
+  width: 10px;
+  height: 10px;
+  background-color: transparent
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: #ddd
+}
+
 body {
   margin: 0;
   padding: 0;
+  background: #f5f5f5;
 }
 
 ul {
@@ -12,6 +29,10 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.pointer {
+  cursor: pointer;
 }
 
 .btn {
