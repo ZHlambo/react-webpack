@@ -34,7 +34,7 @@ export default() => {
               </AppLayout>
           )}/>
           <Route path="/err" component={errRoute}/>
-          <Redirect to="/err"/>
+          <Redirect to="/index/item"/>
         </Switch>
       </ConnectedRouter>
     </Provider>

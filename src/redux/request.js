@@ -25,7 +25,7 @@ methods.forEach(method => {
 
     const _request = superagent[method](formatUrl(path,operateId));
     headers = headers || {};
-    headers.Authorization = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGFtYm8iLCJ0eXBlIjoibWFuYWdlIiwiaWF0IjoxNTEwNjUyNjAyLCJleHAiOjE1MTA3MzkwMDJ9.vbiYD_1YmCrhLNb81JbR-pQzLf98Mm20oPCD9H-MAQU";
+    headers.Authorization = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGFtYm8iLCJ0eXBlIjoibWFuYWdlIiwiaWF0IjoxNTExMzM1MzgwLCJleHAiOjE1MTE0MjE3ODB9.kBekOUxU_f08PGyg4Sm2l_3-peiDJ_pZIAC8EjS4OTM";
     if (headers) {
       _request.set(Object.assign({
         'content-type': 'application/json',

@@ -158,11 +158,11 @@ export default class Table extends Component {
   }
 
   render() {
-    let {dataSource, fetching, noMore, loadMore} = this.props;
+    let {className, style, dataSource, fetching, noMore, loadMore} = this.props;
     let {scroll} = this.state;
 
     return (
-      <div className={styles.table}>
+      <div style={style} className={classname(styles.table, className)}>
         <div className={styles.body} ref="tableBody">
           <table ref="header">
             <thead>

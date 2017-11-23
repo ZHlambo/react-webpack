@@ -11,7 +11,7 @@ const PUT_CAT_INFO = "PUT_CAT_INFO";
 
 
 const initState = {
-  cats: [],
+  cats: "",
 }
 
 export const getCats = (query) => (dispatch, getState) => {
@@ -24,11 +24,6 @@ export const getCats = (query) => (dispatch, getState) => {
             promise: request.get(API_CATS,{
               // headers: {Authorization :"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoibGFtYm8iLCJ0eXBlIjoibWFuYWdlIiwiaWF0IjoxNTEwNjUyNjAyLCJleHAiOjE1MTA3MzkwMDJ9.vbiYD_1YmCrhLNb81JbR-pQzLf98Mm20oPCD9H-MAQU"},
               query
-            }).then(e => {
-              for (let i = 0; i < e.length; i++) {
-                dispatch(getCatChild(e[i].id, e[i]));
-              }
-              return e;
             })
         }
     })
@@ -113,9 +108,10 @@ export default function catReducer(state = initState, action) {
       //   return {...state, fcCats:false}
       case `${CAT}_FULFILLED`:
       case `${DEL_CAT}_FULFILLED`:
-      case `${CAT_CHILD}_FULFILLED`:
         // updateElement(state.cats, "id", action.payload);
         return {...state}
+      case `${CAT_CHILD}_FULFILLED`:
+        return {...state, catChild: action.payload}
 
       default:
         return {...state}

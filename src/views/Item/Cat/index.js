@@ -11,8 +11,17 @@ export default class Cat extends Component {
     this.state = {};
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.props.getCats({limit: 100});
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.catReducer.cats != nextProps.catReducer.cats && nextProps.catReducer.cats) {
+      console.log(nextProps.catReducer.cats);
+      for (let i = 0; i < nextProps.catReducer.cats.length; i++) {
+        nextProps.getCatChild(nextProps.catReducer.cats[i].id, nextProps.catReducer.cats[i]);
+      }
+    }
   }
 
   putCatInfo = (cat) => {
