@@ -18,4 +18,7 @@ var server = new WebpackDevServer(compiler, {
     }
 });
 console.log(`App is run in url http://${config.server_host}:${config.server_port}`);
+
+server.use(require("webpack-hot-middleware")(compiler));
+
 server.listen(config.server_port);

@@ -1,8 +1,54 @@
+$red: red;
+$them: #4c4c4c;
+
 .body {
-  width: 250px;
-  position: fixed;
-  line-height: 35px;
+  height: 2000px;
+  overflow: auto;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+body {
   background: white;
-  height: 1000px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.2);
+}
+
+.header {
+  position: fixed;
+  width: 100%;
+  background: $them;
+  color: white;
+  display: flex;
+  top: 0;
+  z-index: 1;
+  margin: auto;
+  min-width: 1200px;
+  justify-content: center;
+
+  > li {
+    > a {
+      padding: 15px 20px;
+      display: block;
+      border-bottom: 4px solid transparent;
+
+      &:hover {
+        border-bottom: 4px solid $red;
+        color: $red;
+      }
+    }
+  }
+}
+
+.children {
+  z-index: 0;
+  height: 100%;
+  margin: auto;
+  right: 0;
+  left: 0;
+  padding-top: 55px;
+  max-width: 1200px;
+  min-width: 1200px;
+  background: #fcfcfc;
 }

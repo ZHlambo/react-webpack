@@ -1,5 +1,5 @@
 import request from '../request'
-import {parseDataSource, updateElement, deleteElement} from 'static/utils'
+import {parseDataSource, updateElement, deleteElement} from 'utils'
 import {HOST, API_CATS, API_CAT, API_CAT_CHILD, API_CAT_INFO, API_DEL_CAT} from  '../api'
 
 const CATS = "CATS";
@@ -16,8 +16,8 @@ const initState = {
 
 export const getCats = (query) => (dispatch, getState) => {
     query = query || {};
-    query.where = query.where || {};
-    query.where.deletedAt = {$ne: null};
+    // query.where = query.where || {};
+    // query.where.deletedAt = {$ne: null};
     dispatch({
         type: CATS,
         payload: {

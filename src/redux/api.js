@@ -13,3 +13,7 @@ export const API_SKUS = HOST + "/skus";
 export const API_SKU = HOST + "/sku";
 export const API_DEL_SKU = HOST + "/sku/{id}";
 export const API_SKU_INFO = HOST + "/sku/{id}/info";
+
+export const API_TXTS = HOST + "/txts";
+export const API_TXT_MSGS = HOST + "/txt/{id}/msgs";
+export const API_TXT_INFO = HOST + "/txt/{id}/info";

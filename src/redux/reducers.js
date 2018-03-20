@@ -7,11 +7,13 @@ import {
 
 import authReducer from './reducer/auth'
 import catReducer from './reducer/cat'
-import skuReducer from './reducer/sku'
+import txtReducer from './reducer/txt'
+import msgReducer from './reducer/msg'
 
 export default combineReducers({
     routing:routerReducer,
     authReducer,
     catReducer,
-    skuReducer,
+    txtReducer,
+    msgReducer,
 })
