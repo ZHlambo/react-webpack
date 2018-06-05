@@ -63,7 +63,7 @@ export default class AppLayout extends Component {
         </div>
       </div>
       <div className={styles.rightView}>
-        <Table dataSource={txts} header={this.txtHeader} hasHeader={false}/>
+        <Table dataSource={txts} header={this.txtHeader}/>
       </div>
     </div>)
   }

@@ -18,6 +18,7 @@ import AppLayout from './AppLayout'
 import Home from './Home'
 import Txt from './Txt'
 import IndexPage from './Index'
+import Drag from './Drag'
 
 const history = createHistory() // Tell the Router to use our enhanced(增强的) history
 const store = createStore(reducers, applyMiddleware(thunk, promiseMiddleware({}), routerMiddleware(history)))
@@ -35,6 +36,7 @@ export default() => {
   return (<Provider store={store}>
     <ConnectedRouter history={history}>
       <Switch>
+        <Route path="/drag" component={Drag}/>
         <Route path="/err" component={errRoute}/>
         <Route path="/index" component={IndexPage}/>
         <Route path="/" component={appLayout}/>

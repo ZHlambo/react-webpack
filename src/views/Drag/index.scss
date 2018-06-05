@@ -1,0 +1,37 @@
+@import "../../value.scss";
+
+.body {
+  display: flex;
+}
+
+.ElementsView {
+  width: 300px;
+  border: 1px solid $color-border;
+  padding: $space-10;
+
+  > * {
+    height: 30px;
+    margin-bottom: $space-10;
+    display: flex;
+
+    > span:first-child {
+      width: 80px;
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    > div {
+      flex: 1;
+    }
+  }
+
+  .LinearLayout {
+    border: 1px solid $color-border;
+    height: 100%;
+  }
+}
+
+.container {
+  flex: 1;
+}
