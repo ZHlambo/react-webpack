@@ -35,3 +35,18 @@
 .container {
   flex: 1;
 }
+
+.attrView {
+  display: flex;
+
+  > span:nth-child(1) {
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  > span:nth-child(2) {
+    flex: 1;
+  }
+}

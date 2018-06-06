@@ -1,10 +1,11 @@
 import React, {Component} from "react";
+import LinearLayout from "element/LinearLayout"
 
 export default class Container extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      elements: []
+      elements: [<LinearLayout />]
     }
   }
   setData = (element) => {
